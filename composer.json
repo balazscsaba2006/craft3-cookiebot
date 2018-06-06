@@ -14,9 +14,9 @@
   ],
   "support": {
     "email": "csaba.balazs@humandirect.eu",
-    "issues": "https://github.com/balazscsaba2006/craft-cookiebot/issues?state=open",
-    "source": "https://github.com/balazscsaba2006/craft-cookiebot",
-    "docs": "https://github.com/balazscsaba2006/craft-cookiebot"
+    "issues": "https://github.com/balazscsaba2006/craft3-cookiebot/issues?state=open",
+    "source": "https://github.com/balazscsaba2006/craft3-cookiebot",
+    "docs": "https://github.com/balazscsaba2006/craft3-cookiebot"
   },
   "license": "proprietary",
   "authors": [
@@ -44,10 +44,10 @@
     "handle": "cookiebot",
     "hasCpSettings": false,
     "hasCpSection": false,
-    "changelogUrl": "https://raw.githubusercontent.com/balazscsaba2006/craft-cookiebot/master/CHANGELOG.md",
-    "class": "balazscsaba2006\\cookiebot\\Cookiebot",
+    "changelogUrl": "https://raw.githubusercontent.com/balazscsaba2006/craft3-cookiebot/master/CHANGELOG.md",
+    "class": "humandirect\\cookiebot\\Cookiebot",
     "components": {
-      "services": "balazscsaba2006\\cookiebot\\services\\CookiebotService"
+      "services": "humandirect\\cookiebot\\services\\CookiebotService"
     }
   }
 }
