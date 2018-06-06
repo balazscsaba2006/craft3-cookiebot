@@ -1,0 +1,53 @@
+{
+  "name": "balazscsaba2006/cookiebot",
+  "description": "CookieBot integration into Craft CMS 3.",
+  "type": "craft-plugin",
+  "version": "v1.0.0",
+  "keywords": [
+    "craft",
+    "cms",
+    "craftcms",
+    "craft-plugin",
+    "cookiebot",
+    "bookie bot",
+    "gdpr"
+  ],
+  "support": {
+    "email": "csaba.balazs@humandirect.eu",
+    "issues": "https://github.com/balazscsaba2006/craft-cookiebot/issues?state=open",
+    "source": "https://github.com/balazscsaba2006/craft-cookiebot",
+    "docs": "https://github.com/balazscsaba2006/craft-cookiebot"
+  },
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Human Direct",
+      "homepage": "https://humandirect.eu"
+    }
+  ],
+  "require": {
+    "craftcms/cms": "^3.0.0"
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "humandirect\\cookiebot\\": "src/"
+    }
+  },
+  "extra": {
+    "name": "Cookiebot",
+    "handle": "cookiebot",
+    "hasCpSettings": false,
+    "hasCpSection": false,
+    "changelogUrl": "https://raw.githubusercontent.com/balazscsaba2006/craft-cookiebot/master/CHANGELOG.md",
+    "class": "balazscsaba2006\\cookiebot\\Cookiebot",
+    "components": {
+      "services": "balazscsaba2006\\cookiebot\\services\\CookiebotService"
+    }
+  }
+}

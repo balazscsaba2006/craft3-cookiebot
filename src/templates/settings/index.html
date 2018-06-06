@@ -1,0 +1,47 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: "Domain Group ID"|t,
+    id: 'domainGroupID',
+    name: 'domainGroupID',
+    instructions: "Can be found by accessing {url} in \"Your scripts\" tab."|t({url: 'https://manage.cookiebot.com/en/manage'}),
+    value: settings.domainGroupID,
+    errors: settings.getErrors('domainGroupID')
+}) }}
+
+<hr>
+<div class="field" id="settings-prependSender-field">
+    <div class="heading">
+        <label id="settings-checkboxes-default-mode-label">{{ 'Checkboxes default mode'|t }}</label>
+        <div class="instructions">
+            <p>{{ "Can be found by accessing {url} in \"Dialog\" tab."|t({url: 'https://manage.cookiebot.com/en/manage'}) }}</p>
+        </div>
+    </div>
+</div>
+
+{{ forms.lightswitchField({
+    label: "Preferences"|t,
+    on: settings.defaultPreferences,
+    toggle: true,
+    id: 'defaultPreferences',
+    name: 'defaultPreferences',
+    errors: settings.getErrors('defaultPreferences')
+}) }}
+
+{{ forms.lightswitchField({
+    label: "Statistics"|t,
+    on: settings.defaultStatistics,
+    toggle: true,
+    id: 'defaultStatistics',
+    name: 'defaultStatistics',
+    errors: settings.getErrors('defaultStatistics')
+}) }}
+
+{{ forms.lightswitchField({
+    label: "Marketing"|t,
+    on: settings.defaultMarketing,
+    toggle: true,
+    id: 'defaultMarketing',
+    name: 'defaultMarketing',
+    errors: settings.getErrors('defaultMarketing')
+}) }}
