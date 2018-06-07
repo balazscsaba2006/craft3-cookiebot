@@ -2,7 +2,6 @@
   "name": "balazscsaba2006/cookiebot",
   "description": "CookieBot integration into Craft CMS 3.",
   "type": "craft-plugin",
-  "version": "v1.0.0",
   "keywords": [
     "craft",
     "cms",

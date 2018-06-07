@@ -14,3 +14,7 @@
 - Fixed service template rendering issues
 ### Added
 - Added settings override possibility from `cookiebot.php` config file
+
+## 1.0.3 - 2018-06-08
+### Fixed issue
+- Removed version from composer.json (see composer/packagist#587)
