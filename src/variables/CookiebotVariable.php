@@ -2,7 +2,7 @@
 
 namespace humandirect\cookiebot\variables;
 
-use humandirect\cookiebot\Cookiebot;
+use humandirect\cookiebot\Cookiebot as Plugin;
 
 /**
  * CookiebotVariable class
@@ -17,7 +17,7 @@ class CookiebotVariable
      */
     public function hasConsent(): bool
     {
-        return Cookiebot::$plugin->hasConsent();
+        return Plugin::$plugin->cookiebot->hasConsent();
     }
 
     /**
@@ -25,7 +25,7 @@ class CookiebotVariable
      */
     public function hasPreferencesConsent(): bool
     {
-        return Cookiebot::$plugin->hasPreferencesConsent();
+        return Plugin::$plugin->cookiebot->hasPreferencesConsent();
     }
 
     /**
@@ -33,7 +33,7 @@ class CookiebotVariable
      */
     public function hasStatisticsConsent(): bool
     {
-        return Cookiebot::$plugin->hasStatisticsConsent();
+        return Plugin::$plugin->cookiebot->hasStatisticsConsent();
     }
 
     /**
@@ -41,7 +41,7 @@ class CookiebotVariable
      */
     public function hasMarketingConsent(): bool
     {
-        return Cookiebot::$plugin->hasMarketingConsent();
+        return Plugin::$plugin->cookiebot->hasMarketingConsent();
     }
 
     /**
@@ -54,7 +54,7 @@ class CookiebotVariable
      */
     public function dialogScript(string $culture = null): string
     {
-        return Cookiebot::$plugin->renderDialogScript($culture);
+        return Plugin::$plugin->cookiebot->renderDialogScript($culture);
     }
 
     /**
@@ -67,6 +67,6 @@ class CookiebotVariable
      */
     public function declarationScript(string $culture = null): string
     {
-        return Cookiebot::$plugin->renderDeclarationScript($culture);
+        return Plugin::$plugin->cookiebot->renderDeclarationScript($culture);
     }
 }

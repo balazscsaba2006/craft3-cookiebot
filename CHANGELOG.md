@@ -8,3 +8,9 @@
 ### Fixed issue
 - Fixed issue of cookiebot service naming; renamed `service` component to `cookiebot`
 - Set `$hasCpSettings` to `true`
+
+## 1.0.2 - 2018-06-08
+### Fixed issue
+- Fixed service template rendering issues
+### Added
+- Added settings override possibility from `cookiebot.php` config file

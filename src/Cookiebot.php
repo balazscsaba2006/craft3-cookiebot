@@ -22,7 +22,7 @@ use yii\base\Event;
 class Cookiebot extends Plugin
 {
     /**
-     * @var CookiebotService
+     * @var Cookiebot
      */
     public static $plugin;
 
@@ -75,17 +75,19 @@ class Cookiebot extends Plugin
 
     /**
      * @inheritdoc
-     * @throws \Twig_Error_Loader
-     * @throws \RuntimeException
-     * @throws \yii\base\Exception
      */
     protected function settingsHtml(): string
     {
-        return \Craft::$app->view->renderTemplate(
-            'cookiebot/settings',
-            [
-                'settings' => $this->getSettings(),
-            ]
-        );
+        // Get and pre-validate the settings
+        $settings = $this->getSettings();
+        $settings->validate();
+
+        // Get the settings that are being defined by the config file
+        $overrides = \Craft::$app->getConfig()->getConfigFromFile(strtolower($this->handle));
+
+        return \Craft::$app->view->renderTemplate('cookiebot/settings', [
+            'settings' => $settings,
+            'overrides' => array_keys($overrides),
+        ]);
     }
 }

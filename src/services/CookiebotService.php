@@ -170,7 +170,7 @@ class CookiebotService extends Component
 
         $oldMode = \Craft::$app->view->getTemplateMode();
         \Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);
-        $html = \Craft::$app->view->renderTemplate('cookiebot/templates/scripts/'.$type, $vars);
+        $html = \Craft::$app->view->renderTemplate('cookiebot/scripts/'.$type, $vars);
         \Craft::$app->view->setTemplateMode($oldMode);
 
         return $html;

@@ -9,7 +9,28 @@ This plugin requires Craft CMS 3.0.0-RC1 or later.
 
 - Install with Composer via: ``composer require balazscsaba2006/cookiebot``
 - Navigate to `Settings -> Plugins` and click the "Install" button
+
+## Configure
 - Navigate to `Settings -> Plugins` and configure settings for Cookiebot
+
+### Overriding plugin settings
+
+If you create a [config file](https://craftcms.com/docs/config-settings) in your `config/` folder called `cookiebot.php`, you can override
+the plugin’s settings in the Control Panel. Since that config file is fully [multi-environment](https://craftcms.com/docs/multi-environment-configs) aware, this is
+a handy way to have different settings across multiple environments.
+
+Here’s what that config file might look like along with a list of all of the possible values you can override.
+
+```php
+    <?php
+
+    return [
+        'domainGroupID' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
+        'defaultPreferences' => true,
+        'defaultStatistics' => true,
+        'defaultMarketing' => false
+    ];
+```
  
 ## Usage
 Can be used to render dialog and declaration script on Twig templates

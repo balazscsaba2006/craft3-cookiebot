@@ -1,11 +1,23 @@
 {% import "_includes/forms" as forms %}
 
+{% macro configWarning(setting) -%}
+    {% set setting = '<code>'~setting~'</code>' %}
+    {{ "This is being overridden by the {setting} config setting in your {file} config file."|t('cookiebot', {
+        setting: setting,
+        file: 'cookiebot.php'
+    })|raw }}
+{%- endmacro %}
+
+{% from _self import configWarning %}
+
 {{ forms.textField({
     label: "Domain Group ID"|t,
     id: 'domainGroupID',
     name: 'domainGroupID',
     instructions: "Can be found by accessing {url} in \"Your scripts\" tab."|t({url: 'https://manage.cookiebot.com/en/manage'}),
     value: settings.domainGroupID,
+    disabled: 'domainGroupID' in overrides,
+    warning: 'domainGroupID' in overrides ? configWarning('domainGroupID'),
     errors: settings.getErrors('domainGroupID')
 }) }}
 
@@ -25,6 +37,8 @@
     toggle: true,
     id: 'defaultPreferences',
     name: 'defaultPreferences',
+    disabled: 'defaultPreferences' in overrides,
+    warning: 'defaultPreferences' in overrides ? configWarning('defaultPreferences'),
     errors: settings.getErrors('defaultPreferences')
 }) }}
 
@@ -34,6 +48,8 @@
     toggle: true,
     id: 'defaultStatistics',
     name: 'defaultStatistics',
+    disabled: 'defaultStatistics' in overrides,
+    warning: 'defaultStatistics' in overrides ? configWarning('defaultStatistics'),
     errors: settings.getErrors('defaultStatistics')
 }) }}
 
@@ -43,5 +59,7 @@
     toggle: true,
     id: 'defaultMarketing',
     name: 'defaultMarketing',
+    disabled: 'defaultMarketing' in overrides,
+    warning: 'defaultMarketing' in overrides ? configWarning('defaultMarketing'),
     errors: settings.getErrors('defaultMarketing')
 }) }}
