@@ -16,6 +16,8 @@ use yii\base\Event;
  *
  * @author    Balazs Csaba <csaba.balazs@humandirect.eu>
  * @copyright 2018 Human Direct
+ *
+ * @property CookiebotService $cookiebot The CookieBot service
  */
 class Cookiebot extends Plugin
 {
@@ -23,6 +25,11 @@ class Cookiebot extends Plugin
      * @var CookiebotService
      */
     public static $plugin;
+
+    /**
+     * @var bool
+     */
+    public $hasCpSettings = true;
 
     /**
      * Initialize plugin.
@@ -38,7 +45,7 @@ class Cookiebot extends Plugin
             $variable->set('cookiebot', CookiebotVariable::class);
         });
 
-        $this->setComponents(['service' => CookiebotService::class]);
+        $this->setComponents(['cookiebot' => CookiebotService::class]);
 
         \Craft::info(
             \Craft::t('cookiebot', '{name} plugin loaded', [
@@ -46,6 +53,16 @@ class Cookiebot extends Plugin
             ]),
             __METHOD__
         );
+    }
+
+    /**
+     * Returns the cookiebot service.
+     *
+     * @return CookiebotService The twitter service
+     */
+    public function getCookiebot(): CookiebotService
+    {
+        return $this->get('cookiebot');
     }
 
     /**
