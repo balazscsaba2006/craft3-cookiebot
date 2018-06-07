@@ -65,7 +65,7 @@ class Cookiebot extends Plugin
     protected function settingsHtml(): string
     {
         return \Craft::$app->view->renderTemplate(
-            'cookiebot/setting',
+            'cookiebot/settings',
             [
                 'settings' => $this->getSettings(),
             ]
