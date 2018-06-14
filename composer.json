@@ -41,7 +41,7 @@
   "extra": {
     "name": "Cookiebot",
     "handle": "cookiebot",
-    "hasCpSettings": false,
+    "hasCpSettings": true,
     "hasCpSection": false,
     "changelogUrl": "https://raw.githubusercontent.com/balazscsaba2006/craft3-cookiebot/master/CHANGELOG.md",
     "class": "humandirect\\cookiebot\\Cookiebot",

@@ -27,11 +27,6 @@ class Cookiebot extends Plugin
     public static $plugin;
 
     /**
-     * @var bool
-     */
-    public $hasCpSettings = true;
-
-    /**
      * Initialize plugin.
      */
     public function init(): void
