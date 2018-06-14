@@ -18,3 +18,7 @@
 ## 1.0.3 - 2018-06-08
 ### Fixed issue
 - Removed version from composer.json (see composer/packagist#587)
+
+## 1.0.4 - 2018-06-08
+### Fixed issue
+- Changed hasCpSettings to true in composer.json and removed public property from Plugin class
