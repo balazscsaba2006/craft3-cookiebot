@@ -22,3 +22,7 @@
 ## 1.0.4 - 2018-06-08
 ### Fixed issue
 - Changed hasCpSettings to true in composer.json and removed public property from Plugin class
+
+## 1.0.5 - 2018-07-06
+### Added
+- Added minimum PHP version 7.1
