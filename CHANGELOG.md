@@ -26,3 +26,7 @@
 ## 1.0.5 - 2018-07-06
 ### Added
 - Added minimum PHP version 7.1
+
+## 1.0.6 - 2018-07-06
+### Fixed
+- Downgraded to PHP 7.0 support
