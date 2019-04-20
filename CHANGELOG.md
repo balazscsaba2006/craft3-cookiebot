@@ -30,3 +30,7 @@
 ## 1.0.6 - 2018-07-06
 ### Fixed
 - Downgraded to PHP 7.0 support
+
+## 1.0.7 - 2019-04-20
+### Fixed
+- Upgraded cookiebot support for version 2 of the cookie, that handles cookies that don't require consent
