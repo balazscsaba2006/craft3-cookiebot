@@ -41,12 +41,16 @@ Can be used to render dialog and declaration script on Twig templates
 
 ### Render declaration script:
 ```twig
-{{ craft.cookiebot.dialogScript()|raw }}
+{{ craft.cookiebot.declarationScript()|raw }}
 ```
 
 ### Render dialog/declaration script in a certain language:
 ```twig
+{# dialog script #}
 {{ craft.cookiebot.dialogScript(craft.app.locale.id)|raw }}
+
+{# declaration script #}
+{{ craft.cookiebot.declarationScript(craft.app.locale.id)|raw }}
 ```
 
 
