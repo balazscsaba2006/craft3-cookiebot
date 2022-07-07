@@ -2,6 +2,7 @@
 
 namespace humandirect\cookiebot;
 
+use craft\base\Model;
 use craft\base\Plugin;
 use craft\web\twig\variables\CraftVariable;
 
@@ -63,7 +64,7 @@ class Cookiebot extends Plugin
     /**
      * @inheritdoc
      */
-    protected function createSettingsModel()
+    protected function createSettingsModel(): ?Model
     {
         return new Settings();
     }
