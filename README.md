@@ -1,9 +1,9 @@
-# CookieBot for Craft3
+# CookieBot for Craft3 and Craft4
 
-CookieBot integration into Craft CMS 3.
+CookieBot integration into Craft CMS 3 or 4.
 
 ## Requirements
-This plugin requires Craft CMS 3.0.0-RC1 or later.
+This plugin requires Craft CMS 3.0.0 or later.
 
 ## Install
 
