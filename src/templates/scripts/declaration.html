@@ -2,4 +2,4 @@
         id="CookieDeclaration"
         src="https://consent.cookiebot.com/{{ domainGroupID }}/cd.js"
         {% if culture %}data-culture="{{ culture|upper }}"{% endif %}
-        async></script>
+        {% if autoBlockingMode == true %}data-blockingmode="auto"{% else %}async{% endif %}></script>

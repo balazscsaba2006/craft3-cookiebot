@@ -16,7 +16,7 @@ class Settings extends Model
     public bool $defaultPreferences = false;
     public bool $defaultStatistics = false;
     public bool $defaultMarketing = false;
-    public bool $autoBlockingMode = true;
+    public bool $autoBlockingMode = false;
 
     /**
      * @inheritdoc
@@ -33,7 +33,7 @@ class Settings extends Model
             ['defaultMarketing', 'boolean'],
             ['defaultMarketing', 'default', 'value' => false],
             ['autoBlockingMode', 'boolean'],
-            ['autoBlockingMode', 'default', 'value' => true],
+            ['autoBlockingMode', 'default', 'value' => false],
         ];
     }
 }
