@@ -2,4 +2,5 @@
         id="Cookiebot"
         src="https://consent.cookiebot.com/uc.js" data-cbid="{{ domainGroupID }}"
         {% if culture %}data-culture="{{ culture|upper }}"{% endif %}
+        {% if autoBlockingMode %}data-blockingmode="auto"{% endif %}
         async></script>

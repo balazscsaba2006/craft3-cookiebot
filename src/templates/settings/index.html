@@ -21,6 +21,17 @@
     errors: settings.getErrors('domainGroupID')
 }) }}
 
+{{ forms.lightswitchField({
+    label: "Auto Blocking Mode"|t,
+    on: settings.autoBlockingMode,
+    toggle: true,
+    id: 'autoBlockingMode',
+    name: 'autoBlockingMode',
+    disabled: 'autoBlockingMode' in overrides,
+    warning: 'autoBlockingMode' in overrides ? configWarning('autoBlockingMode'),
+    errors: settings.getErrors('autoBlockingMode')
+}) }}
+
 <hr>
 <div class="field" id="settings-prependSender-field">
     <div class="heading">

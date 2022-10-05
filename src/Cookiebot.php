@@ -11,6 +11,7 @@ use humandirect\cookiebot\services\CookiebotService;
 use humandirect\cookiebot\variables\CookiebotVariable;
 
 use yii\base\Event;
+use yii\base\InvalidConfigException;
 
 /**
  * Cookiebot class
@@ -30,7 +31,7 @@ class Cookiebot extends Plugin
     /**
      * Initialize plugin.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
@@ -55,6 +56,8 @@ class Cookiebot extends Plugin
      * Returns the cookiebot service.
      *
      * @return CookiebotService The twitter service
+     *
+     * @throws InvalidConfigException
      */
     public function getCookiebot(): CookiebotService
     {
@@ -75,6 +78,7 @@ class Cookiebot extends Plugin
     protected function settingsHtml(): string
     {
         // Get and pre-validate the settings
+        /** @var Settings $settings */
         $settings = $this->getSettings();
         $settings->validate();
 

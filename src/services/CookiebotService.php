@@ -6,6 +6,7 @@ use craft\base\Component;
 use craft\web\View;
 
 use humandirect\cookiebot\Cookiebot;
+use humandirect\cookiebot\models\Settings;
 
 /**
  * Class CookiebotService
@@ -16,11 +17,7 @@ use humandirect\cookiebot\Cookiebot;
 class CookiebotService extends Component
 {
     private const COOKIE_NAME = 'CookieConsent';
-
-    /**
-     * @var \stdClass|null
-     */
-    private $cookieConsent;
+    private ?\stdClass $cookieConsent;
 
     /**
      * @return bool
@@ -124,6 +121,7 @@ class CookiebotService extends Component
 
         // no cookie has been set, probably the first visit or a custom closable consent template used
         if (!$this->isCookieSet()) {
+            /** @var Settings $settings */
             $settings = Cookiebot::$plugin->getSettings();
             $this->cookieConsent = $this->createConsentObject(
                 $settings->defaultPreferences,
@@ -156,7 +154,14 @@ class CookiebotService extends Component
                 str_replace("'", '"', stripslashes($_COOKIE[self::COOKIE_NAME]))
             )
         );
-        $decoded = json_decode($json);
+
+        try {
+            $decoded = json_decode($json, false, 512, JSON_THROW_ON_ERROR);
+        } catch (\JsonException) {
+            $this->cookieConsent = $this->createConsentObject();
+
+            return $this->cookieConsent;
+        }
 
         $this->cookieConsent = $this->createConsentObject(
             filter_var($decoded->preferences, FILTER_VALIDATE_BOOLEAN),
@@ -198,9 +203,11 @@ class CookiebotService extends Component
             return '';
         }
 
+        /** @var Settings $settings */
         $settings = Cookiebot::$plugin->getSettings();
         $vars['domainGroupID'] = $settings->domainGroupID;
         $vars['culture'] = $culture;
+        $vars['autoBlockingMode'] = $settings->autoBlockingMode;
 
         $oldMode = \Craft::$app->view->getTemplateMode();
         \Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);

@@ -12,25 +12,11 @@ use craft\base\Model;
  */
 class Settings extends Model
 {
-    /**
-     * @var string
-     */
-    public $domainGroupID = '';
-
-    /**
-     * @var bool
-     */
-    public $defaultPreferences = false;
-
-    /**
-     * @var bool
-     */
-    public $defaultStatistics = false;
-
-    /**
-     * @var bool
-     */
-    public $defaultMarketing = false;
+    public string $domainGroupID = '';
+    public bool $defaultPreferences = false;
+    public bool $defaultStatistics = false;
+    public bool $defaultMarketing = false;
+    public bool $autoBlockingMode = true;
 
     /**
      * @inheritdoc
@@ -46,6 +32,8 @@ class Settings extends Model
             ['defaultStatistics', 'default', 'value' => false],
             ['defaultMarketing', 'boolean'],
             ['defaultMarketing', 'default', 'value' => false],
+            ['autoBlockingMode', 'boolean'],
+            ['autoBlockingMode', 'default', 'value' => true],
         ];
     }
 }
