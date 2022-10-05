@@ -17,7 +17,7 @@ use humandirect\cookiebot\models\Settings;
 class CookiebotService extends Component
 {
     private const COOKIE_NAME = 'CookieConsent';
-    private ?\stdClass $cookieConsent;
+    private ?\stdClass $cookieConsent = null;
 
     /**
      * @return bool
