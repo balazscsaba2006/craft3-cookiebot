@@ -28,7 +28,8 @@ Here’s what that config file might look like along with a list of all of the p
         'domainGroupID' => 'xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx',
         'defaultPreferences' => true,
         'defaultStatistics' => true,
-        'defaultMarketing' => false
+        'defaultMarketing' => false,
+        'europeanCDN' => false
     ];
 ```
  

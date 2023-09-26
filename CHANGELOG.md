@@ -34,3 +34,6 @@
 ## 1.0.7 - 2019-04-20
 ### Fixed
 - Upgraded cookiebot support for version 2 of the cookie, that handles cookies that don't require consent
+## 2.1.3 - 2023-09-27
+### Added
+- Option to change TLD

@@ -208,6 +208,7 @@ class CookiebotService extends Component
         $vars['domainGroupID'] = $settings->domainGroupID;
         $vars['culture'] = $culture;
         $vars['autoBlockingMode'] = $settings->autoBlockingMode;
+        $vars['CDNdomain'] = $settings->europeanCDN ? 'eu' : 'com';
 
         $oldMode = \Craft::$app->view->getTemplateMode();
         \Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);

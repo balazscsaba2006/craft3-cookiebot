@@ -17,6 +17,7 @@ class Settings extends Model
     public bool $defaultStatistics = false;
     public bool $defaultMarketing = false;
     public bool $autoBlockingMode = false;
+    public bool $europeanCDN = false;
 
     /**
      * @inheritdoc
@@ -34,6 +35,8 @@ class Settings extends Model
             ['defaultMarketing', 'default', 'value' => false],
             ['autoBlockingMode', 'boolean'],
             ['autoBlockingMode', 'default', 'value' => false],
+            ['europeanCDN', 'boolean'],
+            ['europeanCDN', 'default', 'value' => false],
         ];
     }
 }
