@@ -1,5 +1,5 @@
 <script type="text/javascript"
         id="CookieDeclaration"
-        src="https://consent.cookiebot.com/{{ domainGroupID }}/cd.js"
+        src="https://consent.cookiebot.{{ CDNdomain }}/{{ domainGroupID }}/cd.js"
         {% if culture %}data-culture="{{ culture|upper }}"{% endif %}
         {% if autoBlockingMode == true %}data-blockingmode="auto"{% else %}async{% endif %}></script>

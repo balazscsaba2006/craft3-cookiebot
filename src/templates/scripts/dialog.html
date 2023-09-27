@@ -1,6 +1,6 @@
 <script type="text/javascript"
         id="Cookiebot"
-        src="https://consent.cookiebot.com/uc.js"
+        src="https://consent.cookiebot.{{ CDNdomain }}/uc.js"
         data-cbid="{{ domainGroupID }}"
         {% if culture %}data-culture="{{ culture|upper }}"{% endif %}
         {% if autoBlockingMode == true %}data-blockingmode="auto"{% else %}async{% endif %}></script>

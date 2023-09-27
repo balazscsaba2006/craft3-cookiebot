@@ -32,6 +32,17 @@
     errors: settings.getErrors('autoBlockingMode')
 }) }}
 
+{{ forms.lightswitchField({
+    label: "Use .eu TLD instead of .com for loading cookiebot"|t,
+    on: settings.europeanCDN,
+    toggle: true,
+    id: 'europeanCDN',
+    name: 'europeanCDN',
+    disabled: 'europeanCDN' in overrides,
+    warning: 'europeanCDN' in overrides ? configWarning('europeanCDN'),
+    errors: settings.getErrors('europeanCDN')
+}) }}
+
 <hr>
 <div class="field" id="settings-prependSender-field">
     <div class="heading">
